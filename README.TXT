@@ -28,3 +28,7 @@ The purpose of this project is to demonstrate and study library classes, such
 as ArrayList, HashMap, HashSet, and Random.
 
 This project is only a first, rudimentary step towards the full solution.
+
+Part 2 -
+Q24: Step 24: A HashMap is a collection class in Java that stores key-value pairs. It allows you to quickly look up a value if you know its key. You can add entries with put(key, value), retrieve values with get(key), and check for the existence of a key with containsKey(key).
+
