@@ -44,7 +44,9 @@ public class SupportSystem
                 finished = true;
             }
             else {
-                String response = responder.generateResponse();
+                String[] words = input.split(" ");
+                String firstWord = words[0];
+                String response = responder.generateResponse(firstWord);
                 System.out.println(response);
             }
         }
