@@ -1,4 +1,8 @@
 import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Random;
+
 /**
  * The responder class represents a response generator object.
  * It is used to generate an automatic response to an input string.
@@ -8,37 +12,59 @@ import java.util.HashMap;
  */
 public class Responder
 {
-    private HashMap<String, String> responses;
-    
+    private HashMap<String, String> responseMap;
+    private ArrayList<String> defaultResponses;
+    private String lastDefault;
+    private Random random;
+
     /**
      * Construct a Responder - nothing to do
      */
     public Responder() {
-        responses = new HashMap<>();
-        fillResponsesMap(); // populate the map when object is created
+        responseMap = new HashMap<>();
+        defaultResponses = new ArrayList<>();
+        lastDefault = "";
+        random = new Random();
+
+        fillResponsesMap();
+        fillDefaultResponses();
     }
     
     private void fillResponsesMap() {
-        responses.put("hello", "Hi there!");
-        responses.put("bye", "Goodbye");
-        responses.put("thanks", "You're welcome!");
+        responseMap.put("hello", "Hi there!");
+        responseMap.put("bye", "Goodbye");
+        responseMap.put("slow", "Have you tried restarting your computer?");
+        responseMap.put("crash", "That sounds serious. Can you describe what you were doing?");
+        responseMap.put("bug", "Bugs are common. Can you give more details?");
     }
     
+       private void fillDefaultResponses() {
+    defaultResponses.add("I don't understand.");
+    defaultResponses.add("Can you explain more?");
+    defaultResponses.add("Please tell me more.");
+    }
+
     /**
      * Generate a response.
      * @return   A string that should be displayed as the response
      */
-    public String generateResponse(String word)
+    public String generateResponse(HashSet<String> inputWords)
     {
-        String response = responses.get(word);
-        if (response == null) {
-            response = pickDefaultResponse();
+        for(String word : inputWords) {
+        if (responseMap.containsKey(word)) {
+            return responseMap.get(word);
         }
-        return response;
+    }
+        return pickDefaultResponse();
     }
     
     private String pickDefaultResponse() {
-        return "I dont understand.";
+        String response;
+        do {
+            response = defaultResponses.get(random.nextInt(defaultResponses.size()));
+        } while(response.equals(lastDefault));
+        lastDefault = response;
+        return response;
     }
 }
 
