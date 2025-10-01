@@ -45,4 +45,6 @@ for (String key : phoneBook.keySet()) {
     System.out.println(key);
 }
 Q33:Changed the Responder class to use a HashMap<String, String> where keys are known words and values are responses. Created a fillResponsesMap() method to populate the map. Updated generateResponse(String word) to return the associated response for the word, or a default response if the word is not in the map.
-Q34:
+Q34: A HashSet stores unique elements only, unordered, no duplicates allowed and no guaranteed order of elements. An ArrayList only stores elements in order, duplicates allowed, maintains insertion order. Similarites between them are that they are both  collections, that can store objects and support iterations and the differences are that an ArrayList allows duplicates and keeps order, while a HashSet doesnt allow duplicates and has no order guarantee. 
+Q35: From a HashSet the order is unpredicatble and from an ArrayList the order is the same as the insertion order.
+Q36: If you split the string on " " (space), multiple consecutive spaces can create empty strings in your array. We can use input.trim().split("\\s+") → removes leading/trailing spaces and treats multiple spaces as one.
