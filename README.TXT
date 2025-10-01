@@ -44,4 +44,5 @@ Q32: You can print all keys using keySet(): It should be show this in the code
 for (String key : phoneBook.keySet()) {
     System.out.println(key);
 }
-
+Q33:Changed the Responder class to use a HashMap<String, String> where keys are known words and values are responses. Created a fillResponsesMap() method to populate the map. Updated generateResponse(String word) to return the associated response for the word, or a default response if the word is not in the map.
+Q34:
