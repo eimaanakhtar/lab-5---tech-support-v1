@@ -45,6 +45,21 @@ for (String key : phoneBook.keySet()) {
     System.out.println(key);
 }
 Q33:Changed the Responder class to use a HashMap<String, String> where keys are known words and values are responses. Created a fillResponsesMap() method to populate the map. Updated generateResponse(String word) to return the associated response for the word, or a default response if the word is not in the map.
+
 Q34: A HashSet stores unique elements only, unordered, no duplicates allowed and no guaranteed order of elements. An ArrayList only stores elements in order, duplicates allowed, maintains insertion order. Similarites between them are that they are both  collections, that can store objects and support iterations and the differences are that an ArrayList allows duplicates and keeps order, while a HashSet doesnt allow duplicates and has no order guarantee. 
+
 Q35: From a HashSet the order is unpredicatble and from an ArrayList the order is the same as the insertion order.
+
 Q36: If you split the string on " " (space), multiple consecutive spaces can create empty strings in your array. We can use input.trim().split("\\s+") → removes leading/trailing spaces and treats multiple spaces as one.
+
+Q37: Modified the SupportSystem and Responder classes so that input is now treated as a set of words (HashSet<String>) instead of a single string. This will allow the system to check each word against the map of known words and returns the associated response if any word matches. If none of the words are recognized, a default response is returned, which allows the system to handle multiple words in the uses input more efficiently.
+
+Q38: Added more word/response mappings into the application to make it respond to a wider range of user inputs. I added "slow", "crash" and "bug".
+
+Q39: To make sure the same default response is never repeated twice in a row, the program stores, the last default response in a variable. Before returning a new default, it would check if it is the same as the previous one if so, it would pick another option to guarantee variety.
+
+Q40: If two words are variations like synonyms should map to the same response the HashMap be designed so multiple keys point to the same value.
+
+Q41:When multiple words from the user input are recognized, the program could enhance its response logic to either combine multiple responses or prioritize one. For example, if the input contains both "slow" and "internet," the program could provide a response addressing both issues together instead of only one.
+
+Q42:When no word is recognized, instead of returning a random default response, the system could analyze the input further. Certain unrecognized words (like “why,” “how,” or “who”) could be used to choose a more fitting default. This would make the system feel more natural and context-aware.
