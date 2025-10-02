@@ -6,6 +6,10 @@ import java.util.Random;
 /**
  * The responder class represents a response generator object.
  * It is used to generate an automatic response to an input string.
+ * It interacts with the user via text input/output and provides automated responses.
+ * 
+ * @author Eimaan Akhtar
+ * @version 1.0
  * 
  * @author  Michael Kölling and David J. Barnes
  * @version 7.0

@@ -4,6 +4,10 @@ import java.util.HashSet;
  * This class implements a technical support system. It is the top level class 
  * in this project. The support system communicates via text input/output 
  * in the text terminal.
+ * *It interacts with the user via text input/output and provides automated responses.
+ * 
+ * @author Eimaan Akhtar
+ * @version 1.0
  * 
  * This class uses an object of class InputReader to read input from the user,
  * and an object of class Responder to generate responses. It contains a loop
